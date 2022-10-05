@@ -95,11 +95,12 @@ int main(int argc, char **argv)
                 exit(1);
             }
         }
-        else
-        {
-            fp = fopen(argv[1], "w+");
-        }
     }
+    else
+    {
+        fp = fopen(argv[1], "w+");
+    }
+
 
     // fprint datetime
     time_t t = time(NULL);
@@ -107,12 +108,13 @@ int main(int argc, char **argv)
     char s[64];
     size_t ret = strftime(s, sizeof(s), "%c", tm);
     assert(ret);
-    char divider[strlen(s)+1];
-    for(int i = 0; i < strlen(s); i++){
+    char divider[strlen(s) + 1];
+    for (int i = 0; i < strlen(s); i++)
+    {
         divider[i] = '-';
     }
     divider[strlen(s)] = '\0';
-    fprintf(fp, "\n%s\n%s\n%s\n\n", divider,s,divider);
+    fprintf(fp, "\n%s\n%s\n%s\n\n", divider, s, divider);
 
     // input loop
     short curr_indent_level = 0;
