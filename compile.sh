@@ -1,2 +1,2 @@
 #!/bin/sh
-cc -v -o cnote cnote.c
+cc -o cnote cnote.c -lncurses
